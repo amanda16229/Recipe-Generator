@@ -1,3 +1,5 @@
+from AppDemo import HelloKivyApp
+
 print('Welcome to Recipe Generator')
 
 ingredients = []
@@ -10,3 +12,7 @@ while True:
     ingredients.append(ingredient)
 
 print(ingredients)
+
+helloKivy = HelloKivyApp()
+helloKivy.run()
+
