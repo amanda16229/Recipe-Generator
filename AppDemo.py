@@ -40,12 +40,32 @@ class HelloKivyApp(MDApp):
 import kivy
 from kivy.app import App
 from kivy.uix.label import Label
-from uix.floatL
+from kivy.uix.floatlayout import FloatLayout
+from kivy.uix.scatter import Scatter
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.textinput import TextInput
 
 class Kivy(App):
     def build(self):
-        label1 = Label(text="[color = ff3333][b]'Label'[/b] is Added [/color]\n[color = 3333ff]Screen !!:):):):)[ / color]",font_size = '20sp', markup = True)
-        return label1
-label = Kivy()
-#label.run()
+        b = BoxLayout(orientation='vertical')
 
+        t = TextInput(font_size = 50, size_hint_y = None, height = 100)
+        b.add_widget(t)
+
+        f = FloatLayout()
+        b.add_widget(f)
+        s = Scatter()
+        b.add_widget(s)
+        # l = Label(text = "Hello!", font_size = 50)
+        # f.add_widget(s)
+        # s.add_widget(l)
+        #
+        # b.add_widget(t)
+        # b.add_widget(f)
+        #
+        # # Binding it with the label
+        # t.bind(text=l.setter('text'))
+
+        return b
+
+Kivy().run()
