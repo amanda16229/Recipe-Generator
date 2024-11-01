@@ -45,5 +45,19 @@ class check_box(GridLayout):
         self.active = CheckBox(active = True)
         self.add_widget(self.active)
 
+        self.add_widget(Label(text = 'Other'))
+        self.active = CheckBox(active = True)
+        self.add_widget(self.active)
+
+class CheckBoxApp(App):
+    def build(self):
+        return check_box()
+
+if __name__ == '__main__':
+    CheckBoxApp().run()
+
+
+
+
 
 
