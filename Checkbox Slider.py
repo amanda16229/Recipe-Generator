@@ -49,6 +49,19 @@ class check_box(GridLayout):
         self.active = CheckBox(active = True)
         self.add_widget(self.active)
 
+        self.lbl_active = Label(text = 'Checkbox is on')
+        self.add_widget(self.lbl_active)
+
+        self.active.bind(active = self.on_checkbox_Active)
+
+    def on_checkbox_Active(self, checkboxInstance, isActive):
+        if isActive:
+            self.lbl_active.text = "Checkbox is on"
+            print("Checkbox checked")
+        else:
+            self.lbl_active.text = "Checkbox is off"
+            print("Checkbox unchecked")
+
 class CheckBoxApp(App):
     def build(self):
         return check_box()
